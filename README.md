@@ -23,7 +23,6 @@
 - [x] Create a **data-layer** shared between apps
 - [x] **Handled CORS** locally through Vite "server.proxy" configuration for web app; (Same origin policy)
 - [x] Integrate data layer for Native app
-- [] Setup NODE_ENV production to adopt data-layer API domain manipulation
 - [] Make sharable Image UI
 
 ## HOW to extend shared packages?

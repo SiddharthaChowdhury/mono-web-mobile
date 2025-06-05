@@ -2,7 +2,7 @@ const API_DOMAIN = "https://www.hunqz.com";
 
 export const getApi = (key: keyof typeof API) => {
   const isBrowser = typeof document === "object";
-  const isDev = true; // process.env.NODE_ENV
+  const isDev = process.env.NODE_ENV === "development";
   const domain = isBrowser && isDev ? "" : API_DOMAIN;
 
   return {
