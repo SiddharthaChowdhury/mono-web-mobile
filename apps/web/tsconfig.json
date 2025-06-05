@@ -1,0 +1,32 @@
+{
+  "extends": "../../packages/config/tsconfig/vite-app.json",
+  "compilerOptions": {
+    "jsx": "react-jsx", // 👈 allows JSX without importing React
+    "baseUrl": ".", // 👈 allows relative imports from src
+    "rootDir": ".", // 👈 make sure everything compiles from root
+    "target": "ES2022",
+    "lib": ["ES2023", "DOM"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* React alias for JSX transform */
+    "paths": {
+      "@mono/ui": ["../../packages/ui"],
+      "@mono/ui/*": ["../../packages/ui/*"]
+    },
+
+    /* Recommended flags */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  "include": ["src", "vite.config.ts"]
+}

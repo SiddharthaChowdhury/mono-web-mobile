@@ -1,0 +1,12 @@
+{
+  "extends": "../../packages/config/tsconfig/expo-app.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@mono/ui": ["../../packages/ui"],
+      "@mono/ui/*": ["../../packages/ui/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
