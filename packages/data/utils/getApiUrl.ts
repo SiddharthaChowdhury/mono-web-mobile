@@ -1,4 +1,4 @@
-export const API_DOMAIN = "https://www.hunqz.com";
+const API_DOMAIN = "https://www.hunqz.com";
 
 export const getApi = (key: keyof typeof API) => {
   const isBrowser = typeof window === "object";
