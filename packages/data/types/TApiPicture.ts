@@ -1,4 +1,5 @@
 export type TPicture = {
+  id: string;
   imageUrl: string;
   height: number;
   width: number;

@@ -37,6 +37,7 @@ export const useGetProfilePictures = () => {
       const data = await fetchProfileData();
 
       const transformedPictures: TPicture[] = data.pictures.map((pic) => ({
+        id: pic.id,
         imageUrl: `https://www.hunqz.com/img/usr/original/0x0/${pic.url_token}.jpg`,
         height: pic.height,
         width: pic.width,
