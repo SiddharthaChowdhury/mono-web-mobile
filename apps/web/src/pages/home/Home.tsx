@@ -1,7 +1,6 @@
 import { Button } from "@mono/ui";
 
 export const Home = () => {
-
   return (
     <div
       style={{ fontFamily: "sans-serif", padding: "20px", textAlign: "center" }}
@@ -11,11 +10,10 @@ export const Home = () => {
         This text is from the shared UI package.
       </div>
       <Button title="Click Me (Web)" onPress={handlePress} />
-
     </div>
-  )
+  );
 };
 
 const handlePress = () => {
-    alert("Hello from the Web App (Vite)!");
-  };
+  alert("Hello from the Web App (Vite)!");
+};

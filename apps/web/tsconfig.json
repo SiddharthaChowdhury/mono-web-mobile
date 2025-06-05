@@ -1,9 +1,8 @@
 {
   "extends": "../../packages/config/tsconfig/vite-app.json",
   "compilerOptions": {
-    "jsx": "react-jsx", // 👈 allows JSX without importing React
-    "baseUrl": ".", // 👈 allows relative imports from src
-    "rootDir": ".", // 👈 make sure everything compiles from root
+    "jsx": "react-jsx",
+    "baseUrl": ".",
     "target": "ES2022",
     "lib": ["ES2023", "DOM"],
     "module": "ESNext",
