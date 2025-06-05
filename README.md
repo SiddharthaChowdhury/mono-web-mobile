@@ -1,12 +1,19 @@
-## Setup
+## Setup ⚙️
 
-1. Clone
+### Prerequisites ⚠️
+
+1. [pnpm](https://pnpm.io/installation) (install brew: `brew install pnpm`)
+2. Have Iphone simulator setup in the system or Expo app installed in your mobile from the app store (to run native app)
+
+### Getting started
+
+1. Clone this repo
 2. `pnpm install`
 
 - `pnpm native` for Native mobile app
 - `pnpm web` for Browser app
 
-## Agenda WIP
+## Agenda WIP 🏗️
 
 - [x] `.nvmrc` to maintain consistency across environments
 - [x] Setup **monorepo** with _React-Native_ app and a _React web_ app

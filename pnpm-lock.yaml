@@ -89,6 +89,15 @@ importers:
 
   packages/config: {}
 
+  packages/data:
+    dependencies:
+      '@tanstack/react-query':
+        specifier: ^5.51.11
+        version: 5.80.5(react@19.0.0)
+      react:
+        specifier: 19.0.0
+        version: 19.0.0
+
   packages/ui:
     devDependencies:
       '@expo/webpack-config':
@@ -1165,6 +1174,14 @@ packages:
 
   '@sinonjs/fake-timers@10.3.0':
     resolution: {integrity: sha512-V4BG07kuYSUkTCSBHG8G8TNhM+F19jXFWnQtzj+we8DrkpSBCee9Z3Ms8yiGer/dlmhe35/Xdgyo3/0rQKg7YA==}
+
+  '@tanstack/query-core@5.80.5':
+    resolution: {integrity: sha512-kFWXdQOUcjL/Ugk3GrI9eMuG3DsKBGaLIgyOLekR2UOrRrJgkLgPUNzZ10i8FCkfi4SgLABhOtQhx1HjoB9EZQ==}
+
+  '@tanstack/react-query@5.80.5':
+    resolution: {integrity: sha512-C0d+pvIahk6fJK5bXxyf36r9Ft6R9O0mwl781CjBrYGRJc76XRJcKhkVpxIo68cjMy3i47gd4O1EGooAke/OCQ==}
+    peerDependencies:
+      react: ^18 || ^19
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -6446,6 +6463,13 @@ snapshots:
   '@sinonjs/fake-timers@10.3.0':
     dependencies:
       '@sinonjs/commons': 3.0.1
+
+  '@tanstack/query-core@5.80.5': {}
+
+  '@tanstack/react-query@5.80.5(react@19.0.0)':
+    dependencies:
+      '@tanstack/query-core': 5.80.5
+      react: 19.0.0
 
   '@trysound/sax@0.2.0': {}
 
