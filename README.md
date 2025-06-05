@@ -22,7 +22,7 @@
 - [x] Hoist common packages to avoid peer dependency conflicts between apps using same packages (best practice)
 - [x] Create a **data-layer** shared between apps
 - [x] **Handled CORS** locally through Vite "server.proxy" configuration for web app; (Same origin policy)
-- [] Integrate data layer for Native app
+- [x] Integrate data layer for Native app
 - [] Setup NODE_ENV production to adopt data-layer API domain manipulation
 - [] Make sharable Image UI
 
