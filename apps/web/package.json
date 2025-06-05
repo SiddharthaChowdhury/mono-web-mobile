@@ -10,7 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mono/ui": "workspace:*"
+    "@mono/ui": "workspace:*",
+    "@mono/data": "workspace:*"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.4.1",

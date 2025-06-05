@@ -1,6 +1,9 @@
 import { Button } from "@mono/ui";
+import { useDataHome } from "./useDataHome";
 
 export const Home = () => {
+  useDataHome();
+
   return (
     <div
       style={{ fontFamily: "sans-serif", padding: "20px", textAlign: "center" }}

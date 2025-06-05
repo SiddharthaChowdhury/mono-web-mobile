@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import { API } from "../constants";
 import { useCallback } from "react";
 import { TApiProfileResponse, TPicture } from "../types/TApiPicture";
+import { getApi } from "../utils/getApiUrl";
 
 export const useGetProfilePictures = () => {
-  const { queryKey, url, method } = API.PROFILES;
+  const { queryKey, url, method } = getApi("PROFILES");
 
   const fetchProfileData =
     useCallback(async (): Promise<TApiProfileResponse> => {

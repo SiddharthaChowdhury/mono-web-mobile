@@ -17,7 +17,8 @@
     /* React alias for JSX transform */
     "paths": {
       "@mono/ui": ["../../packages/ui"],
-      "@mono/ui/*": ["../../packages/ui/*"]
+      "@mono/ui/*": ["../../packages/ui/*"],
+      "@mono/data/*": ["../../packages/data/*"]
     },
 
     /* Recommended flags */
