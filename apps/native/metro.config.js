@@ -17,8 +17,8 @@ config.resolver.nodeModulesPaths = [
 
 // 3. Ensure Metro can find and bundle files from `packages/`
 config.resolver.extraNodeModules = {
-  "@mono/ui": path.resolve(workspaceRoot, "packages/ui"),  
+  "@mono/ui": path.resolve(workspaceRoot, "packages/ui"),
+  "@mono/data/*": path.resolve(workspaceRoot, "packages/data"),
 };
-
 
 module.exports = config;

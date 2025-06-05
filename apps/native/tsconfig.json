@@ -4,7 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "@mono/ui": ["../../packages/ui"],
-      "@mono/ui/*": ["../../packages/ui/*"]
+      "@mono/ui/*": ["../../packages/ui/*"],
+      "@mono/data/*": ["../../packages/data/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],

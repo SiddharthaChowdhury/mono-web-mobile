@@ -60,6 +60,9 @@ importers:
 
   apps/native:
     dependencies:
+      '@mono/data':
+        specifier: workspace:*
+        version: link:../../packages/data
       '@mono/ui':
         specifier: workspace:*
         version: link:../../packages/ui

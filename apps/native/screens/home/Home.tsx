@@ -1,14 +1,15 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { Button } from "@mono/ui";
+import { useData } from "./useData";
 
 export const Home = () => {
+  useData();
+
   return (
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
-      <Text style={styles.welcomeText}>
-        Welcome to your Expo Monorepo App!
-      </Text>
+      <Text style={styles.welcomeText}>Welcome to your Expo Monorepo App!</Text>
       <Button
         title="Press Me (Shared Button)"
         onPress={() => console.log("Pressed")}
