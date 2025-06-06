@@ -4,13 +4,17 @@
   "main": "index.ts",
   "types": "index.ts",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "lint": "eslint ."
   },
   "dependencies": {
     "@tanstack/react-query": "^5.51.11"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint-config": "workspace:*",
+    "tsconfig": "workspace:*"
+  },
   "peerDependencies": {
     "react": "19.0.0"
   }

@@ -4,11 +4,13 @@
   "main": "index.ts",
   "types": "index.ts",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "lint": "eslint ."
   },
   "dependencies": {},
   "devDependencies": {
-    "@expo/webpack-config": "^19.0.0"
+    "@expo/webpack-config": "^19.0.0",
+    "eslint-config": "workspace:*"
   }
 }

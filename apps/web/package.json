@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.4.1",
+    "eslint-config": "workspace:*",
     "vite": "^6.3.5"
   }
 }

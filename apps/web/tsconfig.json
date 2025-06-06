@@ -1,5 +1,5 @@
 {
-  "extends": "../../packages/config/tsconfig/vite-app.json",
+  "extends": "../../packages/tsconfig/vite-app.json",
   "compilerOptions": {
     "jsx": "react-jsx",
     "baseUrl": ".",
