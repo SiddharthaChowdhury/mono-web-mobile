@@ -5,7 +5,9 @@
     "rootDir": ".",
     "paths": {
       "@mono/data/*": ["./*"]
-    }
+    },
+    "jsx": "react", // Or "react-jsx" if using new JSX transform, depends on your React setup
+    "lib": ["es2022", "dom"] // Ensure 'dom' is
   },
   "include": ["."],
   "exclude": ["node_modules", "dist"]

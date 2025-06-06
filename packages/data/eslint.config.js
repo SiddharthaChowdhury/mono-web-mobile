@@ -18,6 +18,7 @@ export default [
       "**/dist/**",
       "**/build/**",
       "eslint.config.js",
+      "**/*.test.*",
     ],
   },
   {

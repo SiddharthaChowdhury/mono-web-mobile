@@ -21,20 +21,24 @@
 - [x] Hoist common packages to avoid peer dependency conflicts between apps using same packages (best practice)
 - [x] Create a **data-layer** (`@mono/data`) shared between apps
 - [x] **Handled CORS** locally through Vite "server.proxy" configuration for web app; (Same origin policy)
+- [x] **Unit testing** setup added for data utils
 
-## Improvement 
-1. Centralized linting to avoid duplication 
+## Improvement
+
+1. Centralized linting to avoid duplication
 2. StoryBook for `@mono/ui`
-3. Setup E2E testing to cover UI and behaviors
-4. Setting up environments for production ready deployment.
+3. Cover unit testing on all other packages
+4. Setup E2E testing to cover UI and behaviors
+5. Setting up environments for production ready deployment.
 
 ## Tooling 🛠️
-1. **Package manager**: `pnpm` (*Why*? It provides fast installs, deduplication, and isolated node_modules)
-2. **MonoRepo**: `Turborepo` (*Why?* It less complicated than NX and provides good ecosystem for React and JS development)
+
+1. **Package manager**: `pnpm` (_Why_? It provides fast installs, deduplication, and isolated node_modules)
+2. **MonoRepo**: `Turborepo` (_Why?_ It less complicated than NX and provides good ecosystem for React and JS development)
 3. **Build tools**: `Vite` for Web and `Expo` for native app
 4. **Linting& Formatting**: `eslint` & `prettier`
 5. **Shared package**: `@mono/ui` acting as designSystem and `@mono/data` for controlled API calls
-
+6. **Unit test** `Jest`
 
 ## HOW to extend shared packages?
 

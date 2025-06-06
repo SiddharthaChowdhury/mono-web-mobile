@@ -13,7 +13,7 @@
     "check-types": {
       "dependsOn": ["^check-types"]
     },
-     "start": {
+    "start": {
       "cache": false,
       "persistent": true
     },
@@ -33,10 +33,17 @@
       "cache": false,
       "persistent": true
     },
-    "data#lint": { 
+    "data#lint": {
       "outputs": []
     },
-    "ui#lint": { 
+    "ui#lint": {
+      "outputs": []
+    },
+    "test": {
+      "outputs": [],
+      "dependsOn": ["^test"]
+    },
+    "data#test": {
       "outputs": []
     }
   }
