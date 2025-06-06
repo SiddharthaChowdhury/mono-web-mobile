@@ -24,8 +24,8 @@
 - [x] **Handled CORS** locally through Vite "server.proxy" configuration for web app; (Same origin policy)
 - [x] Integrate data layer for Native app
 - [x] Make sharable Image Ui
-- [] Integrate the Image Ui in Native app
-- [] Integrate the Image Ui in Web app
+- [x] Integrate the Image Ui in Native app
+- [x] Integrate the Image Ui in Web app
 
 ## HOW to extend shared packages?
 
