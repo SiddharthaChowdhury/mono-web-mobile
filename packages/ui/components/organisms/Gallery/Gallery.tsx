@@ -29,7 +29,7 @@ const Gallery = ({ data }: TProps) => {
     });
 
     return cols;
-  }, [data]);
+  }, [data, numberOfColumns]);
 
   return (
     <View style={style}>

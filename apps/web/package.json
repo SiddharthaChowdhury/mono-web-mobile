@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@mono/ui": "workspace:*",
@@ -15,7 +15,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.4.1",
-    "eslint-config": "workspace:*",
     "vite": "^6.3.5"
   }
 }

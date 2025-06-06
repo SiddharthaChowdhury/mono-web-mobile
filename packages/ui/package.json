@@ -10,7 +10,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@expo/webpack-config": "^19.0.0",
-    "eslint-config": "workspace:*"
+    "@expo/webpack-config": "^19.0.0"
   }
 }

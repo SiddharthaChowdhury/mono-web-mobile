@@ -17,8 +17,7 @@
     "expo-status-bar": "~2.2.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2",
-    "eslint-config": "workspace:*"
+    "@babel/core": "^7.25.2"
   },
   "private": true
 }
