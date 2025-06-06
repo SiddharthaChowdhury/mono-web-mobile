@@ -1,22 +1,17 @@
-import { Button } from "@mono/ui";
+import { Gallery } from "@mono/ui";
+import "./home.css";
 import { useDataHome } from "./useDataHome";
 
 export const Home = () => {
-  useDataHome();
+  const { data } = useDataHome();
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <div
-      style={{ fontFamily: "sans-serif", padding: "20px", textAlign: "center" }}
-    >
-      <h1>Welcome to your Vite Web App!</h1>
-      <div style={{ fontSize: 20, marginBottom: 20 }}>
-        This text is from the shared UI package.
-      </div>
-      <Button title="Click Me (Web)" onPress={handlePress} />
-    </div>
+    <center className="homeWrapper">
+      <Gallery data={data} />
+    </center>
   );
-};
-
-const handlePress = () => {
-  alert("Hello from the Web App (Vite)!");
 };
