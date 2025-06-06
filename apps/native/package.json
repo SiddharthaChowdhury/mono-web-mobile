@@ -2,7 +2,6 @@
   "name": "native",
   "version": "1.0.0",
   "main": "index.ts",
-  "type": "module",
   "scripts": {
     "start": "expo start --port=8085",
     "android": "expo start --android",
