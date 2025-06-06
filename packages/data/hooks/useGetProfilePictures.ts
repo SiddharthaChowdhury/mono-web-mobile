@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useCallback } from "react";
 import { TApiProfileResponse, TPicture } from "../types/TApiPicture";
 import { getApi } from "../utils/getApiUrl";
+import { refineErrorMessage } from "../utils/refineErrorMessage";
 
 export const useGetProfilePictures = () => {
   const { queryKey, url, method } = getApi("PROFILES");
@@ -26,7 +27,7 @@ export const useGetProfilePictures = () => {
 
         return response.json();
       } catch (e) {
-        console.error("Error during fetchProfileData:", getErrorMessage(e));
+        console.error("Error during fetchProfileData:", refineErrorMessage(e));
         throw e;
       }
     }, [url, method]);
@@ -46,12 +47,4 @@ export const useGetProfilePictures = () => {
       return transformedPictures;
     },
   });
-};
-
-// TODO: Move it to Util package
-const getErrorMessage = (e: unknown): string => {
-  if (e instanceof Error) {
-    return e.message;
-  }
-  return JSON.stringify({ e });
 };
