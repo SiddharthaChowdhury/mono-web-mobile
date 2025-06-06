@@ -15,7 +15,7 @@ export default defineConfig({
     mainFields: ["browser", "module", "main"],
   },
   optimizeDeps: {
-    include: ["@mono/ui", "react-native-web"],
+    include: ["@tanstack/react-query", "react-native-web"],
   },
   server: {
     port: 1337,
@@ -27,6 +27,9 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, "/api"), // Rewrites /api to /api on the target
         secure: false,
       },
+    },
+    watch: {
+      ignored: ["!**/node_modules/@mono/ui/**"],
     },
   },
   build: {
