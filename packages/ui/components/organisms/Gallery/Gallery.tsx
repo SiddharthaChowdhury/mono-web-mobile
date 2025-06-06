@@ -1,8 +1,8 @@
-import { Platform, useWindowDimensions, View } from "react-native";
+import { useMemo, useRef } from "react";
+import { useWindowDimensions, View } from "react-native";
 import { TImageAtomProps } from "../../atoms/Picture/Picture";
 import { PictureColumn } from "../../molecules/PictureColumn/PictureColumn";
 import { stylesGallery } from "./styles";
-import { useMemo, useRef } from "react";
 
 type TProps = {
   data: TImageAtomProps[];
@@ -11,9 +11,11 @@ type TProps = {
 const Gallery = ({ data }: TProps) => {
   const style = useRef([stylesGallery.container, { gap: 8 }]).current;
 
-  const { width: screenWidth } = useWindowDimensions();
+  let { width: originalScreenWidth } = useWindowDimensions();
+  const isLargeScreen = originalScreenWidth > 720;
 
-  const numberOfColumns = Platform.OS === "web" ? 3 : 2;
+  const numberOfColumns = isLargeScreen ? 3 : 2;
+  const screenWidth = isLargeScreen ? 720 : originalScreenWidth;
   const columnWidth = screenWidth / numberOfColumns - 16; // 16 = margin compensation
 
   const columns = useMemo(() => {

@@ -6,12 +6,12 @@ type TProps = {
 };
 
 const Vertical = ({ size }: TProps) => {
-  const style = useMemo(() => ({ marginVertical: size }), [size]);
+  const style = useMemo(() => ({ marginVertical: size / 2 }), [size]);
   return <View style={style} />;
 };
 
 const Horizontal = ({ size }: TProps) => {
-  const style = useMemo(() => ({ marginHorizontal: size }), [size]);
+  const style = useMemo(() => ({ marginHorizontal: size / 2 }), [size]);
   return <View style={style} />;
 };
 
