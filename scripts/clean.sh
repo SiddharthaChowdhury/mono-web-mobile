@@ -3,7 +3,7 @@
 echo "Starting clean-up script..."
 
 TARGET_DIRS=("." "apps" "packages")
-REMOVABLE_ITEMS_IN_TARGET_DIRS=("node_modules" "dist" "package-lock.json" "yarn.lock" "pnpm-lock.yaml" ".turbo")
+REMOVABLE_ITEMS_IN_TARGET_DIRS=("node_modules" "dist" "package-lock.json" "yarn.lock" "pnpm-lock.yaml" ".turbo" ".env")
 
 for target_dir in "${TARGET_DIRS[@]}"; do
     if [ -d "$target_dir" ]; then
@@ -25,24 +25,23 @@ for target_dir in "${TARGET_DIRS[@]}"; do
             fi
 
             echo "🔍 Looking for '$item' in '$target_dir'..."
-            if [[ "$item" == .* || "$item" == "dist" ]]; then
-                # Handle directories
-                matches=$(find "$target_dir" -name "$item" -type d -prune)
-                if [ -n "$matches" ]; then
-                    echo "$matches" | xargs rm -rf
-                    echo "✅ Removed '$item' directories in '$target_dir'."
-                else
-                    echo "⚠️ No '$item' directories found in '$target_dir'."
-                fi
-            else
-                # Handle files
-                matches=$(find "$target_dir" -name "$item" -type f)
-                if [ -n "$matches" ]; then
-                    echo "$matches" | xargs rm -f
-                    echo "✅ Removed '$item' files in '$target_dir'."
-                else
-                    echo "⚠️ No '$item' files found in '$target_dir'."
-                fi
+
+            # Determine if it's a directory or file by checking with find
+            dir_matches=$(find "$target_dir" -name "$item" -type d -prune)
+            file_matches=$(find "$target_dir" -name "$item" -type f)
+
+            if [ -n "$dir_matches" ]; then
+                echo "$dir_matches" | xargs rm -rf
+                echo "✅ Removed '$item' directories in '$target_dir'."
+            fi
+
+            if [ -n "$file_matches" ]; then
+                echo "$file_matches" | xargs rm -f
+                echo "✅ Removed '$item' files in '$target_dir'."
+            fi
+
+            if [ -z "$dir_matches" ] && [ -z "$file_matches" ]; then
+                echo "⚠️ No '$item' files or directories found in '$target_dir'."
             fi
         done
     else
@@ -50,5 +49,5 @@ for target_dir in "${TARGET_DIRS[@]}"; do
     fi
 done
 
-echo "Clean-up complete! ✨"
-echo "Need to run 'pnpm install'"
+echo "🧹 Clean-up complete! ✨"
+echo "💡 You might want to run 'pnpm install' next."

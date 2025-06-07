@@ -19,6 +19,7 @@ export default [
       "**/build/**",
       "eslint.config.js",
       "metro.config.js",
+      "babel.config.js",
     ],
   },
   {

@@ -8,10 +8,11 @@
 ### Getting started
 
 1. Clone this repo
-2. `pnpm install`
+2. `pnpm bootstrap` 👈 This will create `.env` files required for the app
+3. `pnpm install` 👈 Will install and link deps
 
-- `pnpm native` for Native mobile app
-- `pnpm web` for Browser app
+- `pnpm native` 👈 Native app 📱 _(recommend: Open system zsh terminal, not from VsCode)_
+- `pnpm web` 👈 Browser app 💻
 
 ## Agenda WIP 🏗️
 
@@ -48,3 +49,27 @@ Important point when creating new shared packages for correctly wire the apps wi
 - `vite.config.ts` - Tells Vite how to find and bundle @mono/package
 - `metro.config.js` - Same as Vite but for native app
 - `tsconfig.json` - Tells TypeScript where to find source files and types for @mono/package.
+
+## Production requirement
+
+It is important to inject the env Variables, like sets say in pipeline we can do something like:
+
+```yaml
+variables: ## or get it from stored CI variable
+  API_DOMAIN: "https://www.hunqz.com"
+
+build_web: ## For web
+  stage: build
+  script:
+    - echo "VITE_API_DOMAIN=$API_DOMAIN" > apps/web/.env.production
+    - pnpm install
+    - pnpm --filter web run build
+
+build_native: ## For Native
+  stage: build
+  script:
+    - echo "EXPO_PUBLIC_API_DOMAIN=$API_DOMAIN" > apps/native/.env.production
+    - pnpm install
+    - pnpm --filter native eas build -p ios --profile production
+    ## or smth like this
+```

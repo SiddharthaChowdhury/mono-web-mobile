@@ -5,12 +5,13 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "web": "pnpm --filter ./apps/web dev",
-    "native": "pnpm --filter ./apps/native exec expo start --tunnel --clear",
+    "native": "pnpm --filter ./apps/native exec expo start",
     "lint": "turbo run lint",
     "test": "turbo run test",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
-    "clean": "./scripts/clean.sh"
+    "clean": "./scripts/clean.sh",
+    "bootstrap": "./scripts/bootstrap.sh"
   },
   "dependencies": {
     "react": "19.0.0",
