@@ -5,7 +5,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "web": "pnpm --filter ./apps/web dev",
-    "native": "pnpm --filter ./apps/native exec expo start",
+    "native": "pnpm --filter ./apps/native exec expo start --tunnel --clear",
     "lint": "turbo run lint",
     "test": "turbo run test",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",

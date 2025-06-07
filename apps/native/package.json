@@ -11,13 +11,14 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@mono/ui": "workspace:*",
     "@mono/data": "workspace:*",
+    "@mono/ui": "workspace:*",
     "expo": "~53.0.9",
     "expo-status-bar": "~2.2.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2"
+    "@babel/core": "^7.25.2",
+    "babel-plugin-dotenv-import": "^3.0.1"
   },
   "private": true
 }

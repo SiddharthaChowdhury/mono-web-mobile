@@ -1,13 +1,25 @@
-const API_DOMAIN = "https://www.hunqz.com";
+const getApiDomain = () => {
+  let API_DOMAIN = "";
+
+  if (import.meta && import.meta.env && import.meta.env.VITE_API_DOMAIN) {
+    API_DOMAIN = import.meta.env.VITE_API_DOMAIN;
+  } else if (typeof process !== "undefined" && process.env.EXPO_API_DOMAIN) {
+    API_DOMAIN = process.env.EXPO_API_DOMAIN;
+  }
+
+  return API_DOMAIN ?? "";
+};
 
 export const getApi = (key: keyof typeof API) => {
-  const isBrowser = typeof document === "object";
-  const isDev = process.env.NODE_ENV === "development";
-  const domain = isBrowser && isDev ? "" : API_DOMAIN;
+  // const isBrowser = typeof document === "object";
+  // const isDev = process.env.NODE_ENV === "development";
+  // const domain = isBrowser && isDev ? "" : API_DOMAIN;
+
+  const API_DOMAIN = getApiDomain();
 
   return {
     ...API[key],
-    url: domain + API[key].url,
+    url: API_DOMAIN + API[key].url,
   };
 };
 
