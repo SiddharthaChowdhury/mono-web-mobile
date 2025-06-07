@@ -14,7 +14,7 @@
 - `pnpm native` 👈 Native app 📱 _(recommend: Open system zsh terminal, not from VsCode)_
 - `pnpm web` 👈 Browser app 💻
 
-## Agenda WIP 🏗️
+## Highlights 🏗️
 
 - [x] `.nvmrc` to maintain consistency across environments
 - [x] Setup **monorepo** with _React-Native_ app and a _React web_ app
@@ -52,7 +52,7 @@ Important point when creating new shared packages for correctly wire the apps wi
 
 ## Production requirement
 
-It is important to inject the env Variables, like sets say in pipeline we can do something like:
+It is important to inject the env Variables, like lets say in pipeline we can do something like:
 
 ```yaml
 variables: ## or get it from stored CI variable

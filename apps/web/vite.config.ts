@@ -3,11 +3,15 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig(({ mode }) => {
-  // Load env file based on `mode` in the current working directory
+  // Load all env variables from `.env.[mode]` file
   const env = loadEnv(mode, process.cwd(), "");
 
   return {
     plugins: [react()],
+    define: {
+      // This makes VITE_API_DOMAIN available as process.env.VITE_API_DOMAIN
+      "process.env.VITE_API_DOMAIN": JSON.stringify(env.VITE_API_DOMAIN),
+    },
     resolve: {
       alias: {
         "react-native": "react-native-web",
@@ -24,7 +28,7 @@ export default defineConfig(({ mode }) => {
       open: true,
       proxy: {
         "/api": {
-          target: env.VITE_API_DEV_DOMAIN, // Use the loaded env variable here
+          target: env.VITE_API_DEV_DOMAIN,
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, "/api"),
           secure: false,

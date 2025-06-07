@@ -1,16 +1,11 @@
 import { Platform } from "react-native";
 
-const getApiDomain = () => {
-  let API_DOMAIN = "";
-
-  if (Platform.OS !== "web") {
-    API_DOMAIN = process.env.EXPO_PUBLIC_API_DOMAIN ?? "";
-  }
-
+const getApiDomain = (): string => {
   if (Platform.OS === "web") {
-    API_DOMAIN = import.meta.env?.VITE_API_DOMAIN ?? "";
+    return process.env.VITE_API_DOMAIN ?? "";
   }
-  return API_DOMAIN;
+
+  return process.env.EXPO_PUBLIC_API_DOMAIN ?? "";
 };
 
 export const getApi = (key: keyof typeof API) => {
@@ -22,7 +17,7 @@ export const getApi = (key: keyof typeof API) => {
   };
 };
 
-// Record all api calls in the app
+// Record all API calls in the app
 export const API = {
   PROFILES: {
     url: "/api/opengrid/profiles/msescortplus",
