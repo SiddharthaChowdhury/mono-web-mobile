@@ -1,4 +1,3 @@
-// packages/data/__tests__/utils/refineErrorMessage.test.ts
 import { refineErrorMessage } from "./refineErrorMessage";
 
 describe("refineErrorMessage", () => {
